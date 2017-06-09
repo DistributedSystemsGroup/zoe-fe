@@ -1,44 +1,30 @@
-# Zoe Front End
+Deploying the Angular FrontEnd
+==============================
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.16.
+Overview
+--------
+* This repository contains the zoe angular frontend for [zoe](https://github.com/DistributedSystemsGroup/zoe) main repository.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Installation
+------------
+Installation can be done in two different ways. Both require installation of a few packages, which are listed in ``package.json``. All dependencies can be installed simply by running ``npm install`` from the root folder.
 
-## Code scaffolding
+1. Development Server
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+ * The first way to install the frontend is to install a local development server; this server will automatically reload when source files are changed. This can be done by the following two steps:
 
-# Configuration
+   * Run ``ng serve``
+   * Navigate to ``http://localhost:4200/``
 
-Edit file `/src/enviroments/environments.prod.ts` and configure the path of the zoe Front End application, and the url for the zoe APIs, you can use a relative path in case it is deployed on the same server.
+2. Proxy Server
 
-# Installation
+ * The second way to install zoe can be done using a proxy with zoe:
+ * Run ``ng build -prod --output-path=prod``
 
-Run `npm install` to install all the application's dependencies.
-Run `ng build --env=prod --output-path=build/prod/` to build the application in `build/prod` folder.
+   * This will create all the build files in the ``/prod`` directory. These files need to be copied to the frontend server setup in the proxy configuration.
+   * Note that in order to change the ``<base href="/">`` within the ``index.html`` file, it is possible to add the following to the ``ng build`` command: ``--base-href x`` where x is the new href value.
+ * The output can be put behind a Nginx or Apache proxy.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-### Change the BaseHref
-
-In order to change the `<base href="/">` within the `index.html file`, is it possible to add the following parameter to the `ng build` command: `--base-href x`, where x is the value of the new href. 
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). 
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to Github Pages
-
-Run `ng github-pages:deploy` to deploy to Github Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Read more
+---------
+More information for deploying the angular project can be found in its documentation at ``DETAILS.md``.
