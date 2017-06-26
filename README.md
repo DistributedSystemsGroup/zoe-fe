@@ -5,9 +5,28 @@ Overview
 --------
 * This repository contains the zoe angular frontend for [zoe](https://github.com/DistributedSystemsGroup/zoe) main repository.
 
+Prerequisites
+--------
+* Node >= 6.9.0
+* NPM >= 3
+* [Angular-Cli](https://github.com/angular/angular-cli)
+
 Installation
 ------------
-Installation can be done in two different ways. Both require installation of a few packages, which are listed in ``package.json``. All dependencies can be installed simply by running ``npm install`` from the root folder.
+1. Install Angular-Cli
+
+Please refer to the official [repository](https://github.com/angular/angular-cli).
+
+ * Note: In linux systems it may require root access rights.
+
+2. Install dependencies
+
+From the root directory of the project, run ``npm install``.
+
+
+Running the server
+------------
+The server can be started in two different ways.
 
 1. Development Server
 
